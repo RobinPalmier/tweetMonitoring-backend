@@ -1,4 +1,4 @@
-const accesTwiter = require('../twitter');
+const accesTwiter = require('../twitter-connect');
 
 const TwitterFunctions = {
     twitterFetchData: () => {
