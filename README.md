@@ -8,7 +8,6 @@
 * CRUD Keywords.
 * Data persistency (Database: MongoDB).
 * Twitter API.
-* Display top scorers
 * CRON jobs will check every 10 minutes, if a tweet is posted about that keyword and store the number in database.
 
 ---
@@ -25,7 +24,8 @@
 #### Credit :
 *28/06/2019* - GPL3 Licence (Open Source)
 
-**Mueen Hossain** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Back-End Developer*
+
+**Mueen Hossain** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Front-End & Back-End Developer*
 &nbsp;
 
 **Guillaume Depretz** &nbsp;&nbsp;&nbsp;*Front-End Developer*
