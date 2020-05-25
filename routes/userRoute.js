@@ -21,6 +21,4 @@ router.route('/me')
 router.route('/allUsers')
     .get(userController.allUsers)
 
-
-
 module.exports = router;
