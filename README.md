@@ -1,3 +1,4 @@
+
 # Tweet Monitoring
 ### *Project Tweet analytics - A web analytics keyword dashboard*
 
@@ -25,19 +26,10 @@
 #### Credit :
 *28/06/2019* - GPL3 Licence (Open Source)
 
-**Mueen Hossain** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Back-End Developer*
-&nbsp;
-
-**Guillaume Depretz** &nbsp;&nbsp;&nbsp;*Front-End Developer*
-&nbsp;
-
-**Brahim Kaddar** &nbsp;&nbsp;&nbsp;*Back-End Developer*
-&nbsp;
-
-**Timmy Khamsithideth** &nbsp;&nbsp;&nbsp;*Back-End Developer*
-&nbsp;
-
-**Robin Palmier** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Front-End & Back-End Developer* *(Project Manager)*
-&nbsp;
+**Mueen Hossain** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Back-End Developer*
+**Guillaume Depretz** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Front-End Developer*
+**Brahim Kaddar** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Back-End Developer*
+**Timmy Khamsithideth** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Back-End Developer*
+**Robin Palmier** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Front-End & Back-End Developer* *(Project Manager)*
 
 *Carried out in 5 days.*
