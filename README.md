@@ -25,19 +25,19 @@
 *28/06/2019* - GPL3 Licence (Open Source)
 
 
-**Mueen Hossain** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Front-End & Back-End Developer*
+**Mueen Hossain** - *Front-End & Back-End Developer*
 &nbsp;
 
-**Guillaume Depretz** &nbsp;&nbsp;&nbsp;*Front-End Developer*
+**Guillaume Depretz** - *Front-End Developer*
 &nbsp;
 
-**Brahim Kaddar** &nbsp;&nbsp;&nbsp;*Back-End Developer*
+**Brahim Kaddar** - *Back-End Developer*
 &nbsp;
 
-**Timmy Khamsithideth** &nbsp;&nbsp;&nbsp;*Back-End Developer*
+**Timmy Khamsithideth** - *Back-End Developer*
 &nbsp;
 
-**Robin Palmier** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Front-End & Back-End Developer* *(Project Manager)*
+**Robin Palmier** - *Front-End & Back-End Developer* *(Project Manager)*
 &nbsp;
 
 *Carried out in 5 days.*
