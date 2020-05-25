@@ -18,12 +18,6 @@ router.route('/signin')
 router.route('/me')
     .get(passportJWT, userController.me)
 
-router.route('/students')
-    .get(userController.students)
-
-router.route('/teachers')
-    .get(userController.teachers)
-
 router.route('/allUsers')
     .get(userController.allUsers)
 
