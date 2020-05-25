@@ -51,21 +51,10 @@ module.exports = {
         res.json({status: 'success', data: userFound })
     },
 
-    students: async (req, res, next) => {
-        const users = await User.find({userType: "Student"})
-        res.status(200).json({users})
-    },
-
-    teachers: async (req, res, next) => {
-        const users = await User.find({userType: "Teacher"})
-        res.status(200).json({users})
-    },
-
     allUsers: async (req, res, next) => {
         const users = await User.find()
         console.log(users)
         res.status(200).json({users})
     },
-
 
 }
