@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RobinPalmier/tweetMonitoring-backend#readme",
   "dependencies": {
+    "nodemon": "^2.0.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -28,11 +29,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.3",
     "morgan": "^1.9.1",
-    "node-fetch": "^2.6.0",
-    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0",
-    "twitter": "^1.7.1"
+    "passport-local": "^1.0.0"
   }
 }
