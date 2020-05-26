@@ -21,4 +21,8 @@ router.route('/me')
 router.route('/allUsers')
     .get(userController.allUsers)
 
+router.route('/:id')
+    .put(userController.updateUser)
+    .delete(userController.deleteUser)
+
 module.exports = router;
