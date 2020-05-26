@@ -57,4 +57,20 @@ module.exports = {
         res.status(200).json({users})
     },
 
+    updateUser: async (req, res, next) => {
+        try {
+            const user = await User.findById({_id: req.params.id});
+            console.log(user);
+            await User.updateOne(user, req.body);
+            return res.status(200).json({
+                status: 'success',
+                message: 'user updated successfully'
+            })
+        } catch (error) {
+            return res.status(400).json({
+                status: 'error',
+                message: 'impossible to update'
+            })
+        }
+    },
 }
