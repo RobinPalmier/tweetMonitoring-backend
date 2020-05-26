@@ -38,7 +38,7 @@ module.exports = {
         // Generate token
         console.log('login user', req.body.email)
         const token = signToken(req.user)
-        res.status(200).json({ 
+        res.status(200).json({
             status: 'success',
             data: {token}
         })
@@ -73,4 +73,19 @@ module.exports = {
             })
         }
     },
+    
+    deleteUser: async (req, res, next) => {
+        try {
+            const user = User.findById({_id: req.params.id});
+            await User.deleteOne(user);
+            return res.status(200).json({
+                status: 'success',
+                message: 'user had been deleted'
+            });
+        } catch {
+            return res.status(400).json({
+                message: 'erreur serveur'
+            })
+        }
+    }
 }
