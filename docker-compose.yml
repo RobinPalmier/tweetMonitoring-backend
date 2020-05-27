@@ -1,33 +1,14 @@
-version: '3.3'
+version: "3.3"
 services:
   node:
-    image: 'node:latest'
-    container_name: 'tweetmonitoring-backend'
-    working_dir: /app
-    command:
-      - /bin/sh
-      - '-c'
-      - 'npm install && npm start'
-    env_file:
-      - .env
+    image: node:latest
     ports:
       - '8080:8080'
-    volumes:
+    volumes :
       - './:/app'
-    links:
-      - mongo
-    networks:
-      - my-network
-  mongo:
-    container_name: 'database_mongoDB'
-    image: mongo
-    volumes:
-      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    ports:
-      - "27017:27017"
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
+    command:
+      - '/bin/bash'
+      - '-c'
+      - 'npm install && npm start'
+    container_name: 'tweetmonitoring-backend'
+    working_dir: '/app'
