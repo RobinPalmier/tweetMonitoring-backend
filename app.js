@@ -1,18 +1,28 @@
-const express = require('express')
-const morgan = require('morgan')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
-const dotenv = require('dotenv')
-const cors = require('cors')
+// Libs
+const express = require('express');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const cors = require('cors');
 
-dotenv.config()
+// Functions
+const Twitter = require('./functions/twitterFunctions');
 
+// Environnements variables
+dotenv.config();
+
+// Database connexion
 mongoose.connect(
     process.env.DB_CONNECT,
     { useNewUrlParser: true },
     () => console.log('Connected to DB')
 )
 
+// Twiter fetch data :
+Twitter.twitterFetchData();
+
+// Create app Express :
 const app = express()
 
 // Middlewares
