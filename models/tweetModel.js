@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // Create a schema
-const keywordSchema = new Schema({
+const tweetSchema = new Schema({
     text: {
         type: String,
         required: true,
@@ -27,12 +27,17 @@ const keywordSchema = new Schema({
     id: {
         type: Number,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        required: true,
+        default: Date.now()
     }
 })
 
 
 // Create a model
-const Keyword = mongoose.model('keyword', keywordSchema)
+const Tweet = mongoose.model('tweet', tweetSchema)
 
 // Export the model
-module.exports = Keyword;
+module.exports = Tweet;

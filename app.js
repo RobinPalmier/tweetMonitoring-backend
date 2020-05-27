@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 
 // Routes
 app.use('/api/auth/user', require('./routes/userRoute'))
-app.use('/api/keyword', require('./routes/keywordRoute'))
+app.use('/api/tweet', require('./routes/tweetRoute'))
 
 // Start the server
 const port = process.env.PORT || 5000
