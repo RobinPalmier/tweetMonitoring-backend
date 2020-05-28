@@ -7,7 +7,7 @@ const TwitterFunctions = {
         let isMatch = keyword.match(regex);
         return !isMatch ? "#".concat(keyword) : keyword;
     },
-    twitterFetchDataByCountry: (idCountry) => {
+    twitterFetchKeywordsByCountry: (idCountry) => {
         new CronJob('*/10 * * * * *', () => {
             accessTwiter.get('trends/place', { id: idCountry, count: 2 })
             .catch((err) => {
@@ -28,7 +28,7 @@ const TwitterFunctions = {
             });
         }).start();
     },
-    twitterFetchDataByKeywords: (word) => {
+    twitterFetchKeywordsByKeyword: (word) => {
         new CronJob('*/10 * * * *', () => {
             accessTwiter.get('search/tweets', { q: TwitterFunctions.keywordsParse(word), count: 2 })
             .catch((err) => {
