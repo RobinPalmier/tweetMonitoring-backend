@@ -15,12 +15,15 @@ dotenv.config();
 // Database connexion
 mongoose.connect(
     process.env.DB_CONNECT,
-    { useNewUrlParser: true },
+    { 
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    },
     () => console.log('Connected to DB')
 )
 
 // Twiter fetch data :
-Twitter.twitterFetchData();
+Twitter.twitterFetchKeywordsByKeyword("keyword");
 
 // Create app Express :
 const app = express()
