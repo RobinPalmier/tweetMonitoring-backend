@@ -23,7 +23,7 @@ mongoose.connect(
 )
 
 // Twiter fetch data :
-Twitter.twitterFetchTweetByUser("TimmyDev1");
+//Twitter.twitterFetchTweetByUser("TimmyDev1");
 
 // Create app Express :
 const app = express()
@@ -35,10 +35,10 @@ app.use(bodyParser.json())
 
 // Routes
 app.use('/api/auth/user', require('./routes/userRoute'))
-app.use('/api/tweet', require('./routes/tweetRoute'))
+app.use('/api/twitter', require('./routes/tweetRoute'))
 
 // Start the server
-const port = process.env.PORT || 5000
+const port = 5000
 app.listen(port);
 
 console.log(`Server listening at ${port}, ${process.env.DB_CONNECT}`)
