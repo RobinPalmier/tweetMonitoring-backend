@@ -30,6 +30,7 @@ app.use(bodyParser.json())
 // Routes
 app.use('/api/auth/user', require('./routes/userRoute'))
 app.use('/api/twitter', require('./routes/tweetRoute'))
+app.use('/api/keyword', require('./routes/keywordRoute'))
 
 // Start the server
 const port = 5000
