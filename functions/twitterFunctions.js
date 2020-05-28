@@ -47,6 +47,27 @@ const TwitterFunctions = {
                 console.log('data parsed', parseData);
             });
         }).start();
+    },
+    twitterFetchTweetByUser: (userName) => {
+        accessTwiter.get('statuses/user_timeline', { screen_name: userName, count: 100 })
+        .catch((err) => {
+            console.log('ERROR :', err.stack);
+        })
+        .then(function (result) {
+            let parseData = [];
+            result.map((userData) => { 
+                parseData.push({
+                    userTwitterId: userData.id,
+                    name: userData.user.name,
+                    screen_name: userData.user.screen_name,
+                    text: userData.text,
+                    dateTweet: userData.created_at,
+                    avatar: userData.user.profile_image_url
+                })
+            });
+
+            console.log('data parsed', parseData);
+        });
     }
 }
 

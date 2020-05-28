@@ -23,7 +23,7 @@ mongoose.connect(
 )
 
 // Twiter fetch data :
-Twitter.twitterFetchKeywordsByKeyword("keyword");
+Twitter.twitterFetchTweetByUser("TimmyDev1");
 
 // Create app Express :
 const app = express()
