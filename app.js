@@ -6,9 +6,6 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
-// Functions
-const Twitter = require('./functions/twitterFunctions');
-
 // Environnements variables
 dotenv.config();
 
@@ -21,9 +18,6 @@ mongoose.connect(
     },
     () => console.log('Connected to DB')
 )
-
-// Twiter fetch data :
-//Twitter.twitterFetchTweetByUser("TimmyDev1");
 
 // Create app Express :
 const app = express()

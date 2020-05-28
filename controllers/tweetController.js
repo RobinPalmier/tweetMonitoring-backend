@@ -5,7 +5,7 @@ const accessTwiter = require('../twitter-connect');
 const Twitter = require('../functions/twitterFunctions');
 
 module.exports = {
-    addTweet: async(req, res, next) => {
+    addTweet: async(req, res) => {
         const { text, replyCount, retweetCount, favoriteCount, user, id, createdAt } = req.body;
         const foundTweet = await Tweet.findOne({id: req.body.id});
         console.log(foundTweet);
@@ -28,7 +28,7 @@ module.exports = {
         res.status(200).json({tweets})
     },
 
-    getTweetByUser: async(req,res) => {
+    getTweetByUser: async(req, res) => {
         accessTwiter.get('statuses/user_timeline', { screen_name: req.params.userName, count: 100 })
         .then((result) => {
             const data = result.map((userData) => { 
