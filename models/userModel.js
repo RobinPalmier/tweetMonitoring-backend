@@ -10,6 +10,11 @@ const userSchema = new Schema({
         unique: true,
         lowercase: true
     },
+    twitterScreenName: {
+        type: String,
+        unique: true,
+        default: ""
+    },
     firstName: {
         type: String,
         required: true

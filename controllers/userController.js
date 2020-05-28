@@ -13,7 +13,7 @@ signToken = user => {
 module.exports = {
     signUp: async (req, res, next) => {
         // Email & password
-        const { email, password, firstName, lastName, age } = req.value.body
+        const { email, password, firstName, lastName, age, twitterScreenName } = req.value.body
 
         // Check if the email already exists
         const foundUser = await User.findOne({ email });
@@ -22,7 +22,7 @@ module.exports = {
         }
 
         // Create the user
-        const newUser = new User({ email, password, firstName, lastName, age })
+        const newUser = new User({ email, password, firstName, lastName, age, twitterScreenName })
         await newUser.save();
         const token = signToken(newUser)
         console.log(foundUser);
@@ -45,7 +45,6 @@ module.exports = {
     },
 
     me: async (req, res, next) => {
-        console.log('I managed to get here !')
         console.log('res', req.user.email)
         const userFound = await User.findOne({email: req.user.email})
         res.json({status: 'success', data: userFound })
@@ -59,8 +58,16 @@ module.exports = {
 
     updateUser: async (req, res, next) => {
         try {
-            const user = await User.findById({_id: req.params.id});
-            console.log(user);
+            const user = await User.findById({_id: req.params.id})
+            const allUsers = await User.find()
+            allUsers.forEach((user) => {
+                if(req.body.email === user.email) {
+                    return res.status(409).json({status: 'error', message: 'this email is already in used !'})
+                }
+                if(req.body.twitterScreenName === user.twitterScreenName) {
+                    return res.status(409).json({status: 'error', message: 'this username already exists !'})
+                }
+            })
             await User.updateOne(user, req.body);
             return res.status(200).json({
                 status: 'success',
