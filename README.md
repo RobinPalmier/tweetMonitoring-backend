@@ -44,7 +44,7 @@ TWITTER_ACCESS_TOKEN_SECRET= Your acces token secret key
 *29/05/2020* - GPL3 Licence (Open Source)
 
 
-**Mueen Hossain** - *Front-End & Back-End Developer*
+**Mueen Hossain** - *Front-End & Lead Back-End Developer*
 &nbsp;
 
 **Guillaume Depretz** - *Front-End Developer*
