@@ -94,5 +94,34 @@ module.exports = {
                 message: 'erreur serveur'
             })
         }
+    },
+
+    addKeyword: async (req, res, next) => {
+        const userFound = await User.findOne({_id: req.user._id})
+        if(userFound.keywords.indexOf(req.params.keyword) != -1) {
+            return res.status(400).json({message: 'this keyword already is already saved !'})
+        } else {
+            userFound.keywords.push(req.params.keyword)
+            await userFound.save()
+            return res.status(200).json({
+                message: 'Keyword has been added !',
+                newUser: userFound
+            })
+        }        
+    },
+
+    deleteUserKeyword: async (req, res, next) => {
+        console.log('toto')
+        const userFound = await User.findOne({email: req.user.email})
+        const index = userFound.keywords.indexOf(req.params.keyword)
+        if (index > -1) {
+            userFound.keywords.splice(index, 1)
+        }
+        await userFound.save()
+        return res.status(200).json({
+            message: 'Keyword has been deleted !',
+            newUser: userFound
+        })
     }
+
 }

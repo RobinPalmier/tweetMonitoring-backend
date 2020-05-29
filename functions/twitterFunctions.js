@@ -1,5 +1,9 @@
-const accessTwiter = require('../twitter-connect');
 const CronJob = require('cron').CronJob;
+
+const accessTwiter = require('../twitter-connect');
+const woeids = require('../static/woeid.json');
+const Keyword = require('../models/keywordModel');
+
 
 const TwitterFunctions = {
     keywordsParse: (keyword) => {
@@ -7,24 +11,21 @@ const TwitterFunctions = {
         let isMatch = keyword.match(regex);
         return !isMatch ? "#".concat(keyword) : keyword;
     },
-    twitterFetchKeywordsByCountry: (idCountry) => {
-        new CronJob('*/10 * * * * *', () => {
-            accessTwiter.get('trends/place', { id: idCountry, count: 2 })
-            .then((result) => {
-                let parseData = [];
-                let date = result[0].created_at;
-
-                result[0].trends.map((keyword) => {
-                    parseData.push({
-                        date: date,
-                        count: keyword.tweet_volume,
-                        keyword: keyword.name
-                    })
-                });
-                console.log('data parsed', parseData);
-            })
-            .catch((err) => {
-                console.log('ERROR :', err.stack);
+    twitterFetchKeywordByCountry: () => {
+        new CronJob('* */10 * * * *', () => {
+            woeids.forEach((element) => {
+                accessTwiter.get('trends/place', { id: element.woeid })
+                .then((result) => {
+                    result.forEach((keyword) => {
+                        keyword.trends.forEach((trend) => {
+                            const newKeyword = new Keyword({hashTag: trend.name, date: keyword.created_at, counter: trend.tweet_volume, woeid: element.woeid});
+                            newKeyword.save();
+                        })
+                    });
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
             })
         }).start();
     },

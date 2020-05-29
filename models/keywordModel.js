@@ -11,6 +11,9 @@ const keywordSchema = new Schema({
     },
     counter: {
         type: Number,
+    },
+    woeid: {
+        type: Number,
     }
 })
 

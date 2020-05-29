@@ -31,6 +31,7 @@ const userSchema = new Schema({
         type: Number,
         required: true
     },
+    keywords: [String]
 })
 
 // bcrypt

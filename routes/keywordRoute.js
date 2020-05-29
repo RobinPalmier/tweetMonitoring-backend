@@ -5,12 +5,12 @@ const keywordController = require('../controllers/keywordController');
 const passportJWT = passport.authenticate('jwt', { session: false })
 
 // Keyword Global Route
-router.route('/:woeid')
-    .get(keywordController.getKeywordByCountry)
+// router.route('/:woeid')
+    // .get(keywordController.getKeywordByCountry)
     
 // Keyword User Routes
 router.route('/all')
-    .get(keywordController.allKeywords)
+    // .get(keywordController.allKeywords)
 
 router.route('/add')
     .post(passportJWT, keywordController.addKeyword)

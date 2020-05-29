@@ -24,4 +24,8 @@ router.route('/:id')
     .put(userController.updateUser)
     .delete(userController.deleteUser)
 
+router.route('/keywords/:keyword')
+    .post(passportJWT, userController.addKeyword)
+    .delete(passportJWT, userController.deleteUserKeyword)
+
 module.exports = router;
